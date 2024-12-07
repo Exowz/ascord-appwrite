@@ -27,18 +27,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <QueryProvider>
-          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem={false}
-              storageKey="ascord-theme"
-            >
-            {children}
-            </ThemeProvider>
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black`}>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="dark"
+                enableSystem={false}
+                storageKey="ascord-theme"
+              >
+                <QueryProvider>
+                  {children}
+                </QueryProvider>
+              </ThemeProvider>
           </body>
-      </QueryProvider>
     </html>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode, useRef } from "react";
-import { SiNextdotjs, SiSupabase, SiAppwrite, SiSocketdotio, SiPrisma, SiFramer, SiHono } from "react-icons/si";
+import { SiNextdotjs, SiSupabase, SiClerk, SiTailwindcss, SiSocketdotio, SiPrisma, SiFramer } from "react-icons/si";
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
@@ -62,7 +62,7 @@ const Features = () => {
         containerClassName="bg-emerald-900"
       />
     </Card>
-    <Card title="HonoJS" icon={<SiHono className="text-black dark:text-white w-10 h-10" />}>
+    <Card title="Clerk" icon={<SiClerk className="text-black dark:text-white w-10 h-10" />}>
       <CanvasRevealEffect
         animationSpeed={3}
         containerClassName="bg-black"
@@ -75,7 +75,7 @@ const Features = () => {
       {/* Radial gradient for the cute fade */}
       <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
     </Card>
-    <Card title="Appwrite" icon={<SiAppwrite className="text-black dark:text-white w-10 h-10" />}>
+    <Card title="Supabase" icon={<SiSupabase className="text-black dark:text-white w-10 h-10" />}>
       <CanvasRevealEffect
         animationSpeed={3}
         containerClassName="bg-sky-600"
@@ -211,7 +211,7 @@ const ExampleContent = () => (
     </h2>
     <div className="col-span-1 md:col-span-8">
       <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-      Ascord&rsquo;s sleek, auto-hiding sidebar gives you quick access to key sections &mdash; private messages, project spaces, and account settings &mdash; without cluttering your workspace.
+      Ascord’s sleek, auto-hiding sidebar gives you quick access to key sections – private messages, project spaces, and account settings – without cluttering your workspace.
       </p>
       <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
       Icons keep everything simple and intuitive, letting you focus on your tasks and conversations without distraction.
@@ -243,10 +243,10 @@ const ExampleContent2 = () => (
       </h2>
       <div className="col-span-1 md:col-span-8">
         <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        Forget the complexity of traditional channel lists. Ascord&rsquo;s dock at the bottom of your screen replaces customizable channels with predefined spaces tailored to your needs.
+        Forget the complexity of traditional channel lists. Ascord’s dock at the bottom of your screen replaces customizable channels with predefined spaces tailored to your needs.
         </p>
         <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        Quickly switch between projects, messages, and resources &mdash; all organized to keep you moving forward without the need to customize or configure.
+        Quickly switch between projects, messages, and resources – all organized to keep you moving forward without the need to customize or configure.
         </p>
       </div>
     </div>
@@ -282,7 +282,7 @@ const ExampleContent2 = () => (
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 h-[30rem]"
+        className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative h-[30rem] relative"
       >
         <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
