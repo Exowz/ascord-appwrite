@@ -4,6 +4,7 @@ import React from 'react'
 
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { Button } from "@/components/ui/button";
+// import { JoinButton } from "../auth/components/join-button";
 
 export default function CallToAction() {
     const words = [
@@ -33,9 +34,9 @@ export default function CallToAction() {
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
             <Button>
-                Get Started
+                Get started
             </Button>
-      </div>
+        </div>
     </div>
     </section>
   )

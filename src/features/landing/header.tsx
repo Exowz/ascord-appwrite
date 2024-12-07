@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toggle";
+// import { JoinButton } from "../auth/components/join-button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,11 +49,9 @@ const Header = () => {
 
           {/* Right Section: Login Button */}
           <div className="flex flex-1 justify-end items-center gap-2">
-            <Link href="/sign-in">
-              <Button>
-                Get started
-              </Button>
-            </Link>
+                <Button>
+                    Get started
+                </Button>
           </div>
         </div>
       </div>

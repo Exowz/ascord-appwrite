@@ -26,26 +26,26 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 
-const formSchema = z.object({
-    email: z.string().email(),
-    password: z.string().min(1, "Required"),
-})
+import { loginSchema } from "../schema";
+import { useLogin } from "../api/use-login";
 
 export const LoginCard = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const { mutate } = useLogin();
+
+    const form = useForm<z.infer<typeof loginSchema>>({
+        resolver: zodResolver(loginSchema),
         defaultValues: {
             email: "",
             password: "",
         },
     });
 
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log({ values });
+    const onSubmit = (values: z.infer<typeof loginSchema>) => {
+        mutate({ json: values });
     };
 
     return (
-        <Card className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+        <Card className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black" suppressHydrationWarning>
             <CardHeader className="flex items-center justify-center text-center p-7">
                 <CardTitle className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
                     <Logo />

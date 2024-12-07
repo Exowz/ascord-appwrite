@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Button } from "@/components/ui/button";
+// import { JoinButton } from "@/features/auth/components/join-button";
 
 export const HeroParallax = ({
   products,
@@ -117,9 +118,9 @@ export const Header = () => {
         connected, and productive.
       </p>
       <div className="relative z-10 mt-8">
-            <Button>
-                <a>Join now</a>
-            </Button>
+              <Button>
+                  Get started
+              </Button>
       </div>
     </div>
   );
