@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 import { QueryProvider } from "@/components/providers/query-provider";
 
 const geistSans = localFont({
@@ -35,6 +36,7 @@ export default function RootLayout({
                 storageKey="ascord-theme"
               >
                 <QueryProvider>
+                  <Toaster />
                   {children}
                 </QueryProvider>
               </ThemeProvider>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode, useRef } from "react";
-import { SiNextdotjs, SiSupabase, SiClerk, SiTailwindcss, SiSocketdotio, SiPrisma, SiFramer } from "react-icons/si";
+import { SiNextdotjs, SiSupabase, SiClerk, SiTailwindcss, SiSocketdotio, SiPrisma, SiFramer, SiAppwrite, SiShadcnui } from "react-icons/si";
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
@@ -56,51 +56,49 @@ const Features = () => {
         </p>
         <>
         <div className="py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center bg-white dark:bg-black w-full mx-auto px-8">
-    <Card title="NextJS" icon={<SiNextdotjs className="text-black dark:text-white w-10 h-10" />}>
-      <CanvasRevealEffect
-        animationSpeed={5.1}
-        containerClassName="bg-emerald-900"
-      />
-    </Card>
-    <Card title="Clerk" icon={<SiClerk className="text-black dark:text-white w-10 h-10" />}>
-      <CanvasRevealEffect
-        animationSpeed={3}
-        containerClassName="bg-black"
-        colors={[
-          [236, 72, 153],
-          [232, 121, 249],
-        ]}
-        dotSize={2}
-      />
-      {/* Radial gradient for the cute fade */}
-      <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-    </Card>
-    <Card title="Supabase" icon={<SiSupabase className="text-black dark:text-white w-10 h-10" />}>
-      <CanvasRevealEffect
-        animationSpeed={3}
-        containerClassName="bg-sky-600"
-        colors={[[125, 211, 252]]}
-      />
-    </Card>
-    <Card title="Prisma" icon={<SiPrisma className="text-black dark:text-white w-10 h-10" />}>
-      <CanvasRevealEffect
-        animationSpeed={5.1}
-        containerClassName="bg-emerald-900"
-      />
-    </Card>
-    <Card title="Socket.io" icon={<SiSocketdotio className="text-black dark:text-white w-10 h-10" />}>
-      <CanvasRevealEffect
-        animationSpeed={5.1}
-        containerClassName="bg-emerald-900"
-      />
-    </Card>
-    <Card title="Framer" icon={<SiFramer className="text-black dark:text-white w-10 h-10" />}>
-      <CanvasRevealEffect
-        animationSpeed={5.1}
-        containerClassName="bg-emerald-900"
-      />
-    </Card>
-  </div>
+  <Card title="NextJS" icon={<SiNextdotjs className="text-black dark:text-white w-10 h-10" />}>
+    <CanvasRevealEffect
+      animationSpeed={5.1}
+      containerClassName="bg-gray-800" // Next.js color
+      colors={[
+        [75, 75, 75], // RGB for a neutral gray
+        [169, 169, 169],
+      ]}
+    />
+  </Card>
+  <Card title="Appwrite" icon={<SiAppwrite className="text-black dark:text-white w-10 h-10" />}>
+    <CanvasRevealEffect
+      animationSpeed={5.1}
+      containerClassName="bg-[#F02E65]" // Appwrite color
+    />
+    {/* Radial gradient for the fade */}
+    <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-[#F02E65]/50 dark:bg-[#F02E65]/90" />
+  </Card>
+  <Card title="Socket.io" icon={<SiSocketdotio className="text-black dark:text-white w-10 h-10" />}>
+    <CanvasRevealEffect
+      animationSpeed={5.1}
+      containerClassName="bg-green-600" // Socket.io dark color
+    />
+  </Card>
+  <Card title="Tailwind CSS" icon={<SiTailwindcss className="text-black dark:text-white w-10 h-10" />}>
+    <CanvasRevealEffect
+      animationSpeed={5.1}
+      containerClassName="bg-[#06B6D4]" // Tailwind CSS cyan color
+    />
+  </Card>
+  <Card title="Framer Motion" icon={<SiFramer className="text-black dark:text-white w-10 h-10" />}>
+    <CanvasRevealEffect
+      animationSpeed={5.1}
+      containerClassName="bg-yellow-500" // Framer's pink-red color
+    />
+  </Card>
+  <Card title="Shadcn UI" icon={<SiShadcnui className="text-black dark:text-white w-10 h-10" />}>
+    <CanvasRevealEffect
+      animationSpeed={5.1}
+      containerClassName="bg-[#6466F1]" // Shadcn UI indigo color
+    />
+  </Card>
+</div>
         </>
     </div>
     </section>

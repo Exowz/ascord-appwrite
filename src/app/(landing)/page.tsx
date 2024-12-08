@@ -1,5 +1,3 @@
-
-
 import CallToAction from "@/features/landing/call-to-actions";
 import Changelog from "@/features/landing/changelog";
 import Features from "@/features/landing/features";
