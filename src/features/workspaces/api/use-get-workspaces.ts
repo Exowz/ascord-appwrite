@@ -7,10 +7,11 @@ export const useGetWorkspaces = () => {
         queryKey: ["workspaces"],
         queryFn: async () => {
             const response = await client.api.workspaces.$get();
-
+            console.log("Response:", response);
+            
             if (!response.ok) {
                 throw new Error("Failed to fetch workspaces");
-            }
+            };
 
             const { data } = await response.json();
 

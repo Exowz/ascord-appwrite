@@ -6,33 +6,39 @@ import { GoCheckCircle, GoHome } from "react-icons/go";
 import { SettingsIcon, UsersIcon } from "lucide-react";
 import { FloatingDock } from "./ui/floating-dock";
 import { TbMessage } from "react-icons/tb";
+import { usePathname } from "next/navigation";
+
+import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 
 export const Dock = () => {
+    const workspaceId = useWorkspaceId();
+    const pathname = usePathname();
+    
     const routes = [
         {
             title: "Home",
             icon: (<GoHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />),
-            href: "",
+            href: `/dashboard/workspaces/${workspaceId}`,
         },
         {
             title: "Tasks",
             icon: (<GoCheckCircle className="h-full w-full text-neutral-500 dark:text-neutral-300" />),
-            href: "/tasks",
+            href: `/dashboard/workspaces/${workspaceId}/tasks`,
         },
         {
             title: "Members",
             icon: (<UsersIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />),
-            href: "/members",
+            href: `/dashboard/workspaces/${workspaceId}/members`,
         },
         {
             title: "Settings",
             icon: (<SettingsIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />),
-            href: "/dm",
+            href: `/dashboard/workspaces/${workspaceId}/settings`,
         },
         {
             title: "Direct Messages",
             icon: (<TbMessage className="h-full w-full text-neutral-500 dark:text-neutral-300" />),
-            href: "",
+            href: `/dashboard/workspaces/${workspaceId}/dm`,
         }
     ];
 

@@ -12,4 +12,4 @@ export function generateInviteCode(length: number) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return result;
-}
+};

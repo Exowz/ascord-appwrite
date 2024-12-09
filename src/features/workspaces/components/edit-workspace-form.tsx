@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { createWorkspaceSchema } from "../schemas";
+import { updateWorkspaceSchema } from "../schemas";
 import { z } from "zod";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useRef } from "react";
@@ -13,35 +13,67 @@ import { Form, FormControl, FormLabel, FormItem, FormMessage, FormField } from "
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useCreateWorkspace } from "../api/use-create-workspace";
-import { ImageIcon } from "lucide-react";
+import { useUpdateWorkspace } from "../api/use-update-workspace";
+import { ArrowLeftIcon, ImageIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Workspace } from "../types";
+import { useConfirm } from "@/hooks/use-confirm";
+import { useDeleteWorkspace } from "../api/use-delete-workspace";
 
-interface CreateWorkspaceFormProps {
+interface EditWorkspaceFormProps {
     onCancel?: () => void;
+    initialValues: Workspace;
 };
 
-export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
+export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceFormProps) => {
     const router = useRouter();
-    const { mutate, isPending} = useCreateWorkspace();
+    const { mutate, isPending} = useUpdateWorkspace();
+    const { 
+        mutate: deleteWorkspace, 
+        isPending: isDeletingWorkspace 
+    } = useDeleteWorkspace();
+
+    const [DeleteDialog, confirmDelete] = useConfirm(
+        "Delete Workspace",
+        "This action cannot be undone.",
+        "destructive",
+    );
+
+    const handleDelete = async () => {
+        const ok = await confirmDelete();
+
+        if(!ok) return;
+        
+        deleteWorkspace({
+            param: { workspaceId: initialValues.$id },
+        }, {
+            onSuccess: () => {
+                window.location.href = "/dashboard";
+            },
+        })
+    }
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const form = useForm<z.infer<typeof createWorkspaceSchema>>({
-        resolver: zodResolver(createWorkspaceSchema),
+    const form = useForm<z.infer<typeof updateWorkspaceSchema>>({
+        resolver: zodResolver(updateWorkspaceSchema),
         defaultValues: {
-            name: "",
+            ...initialValues,
+            image: initialValues.imageUrl ?? "",
         },
     });
 
-    const onSubmit = (values : z.infer<typeof createWorkspaceSchema>) => {
+    const onSubmit = (values : z.infer<typeof updateWorkspaceSchema>) => {
         const finalValues = {
             ...values,
             image: values.image instanceof File ? values.image: "",
         };
 
-        mutate({ form: finalValues }, {
+        mutate({ 
+            form: finalValues,
+            param: { workspaceId: initialValues.$id }
+         }, {
             onSuccess: ({ data }) => {
                 form.reset();
                 router.push(`/dashboard/workspaces/${data.$id}`);
@@ -57,10 +89,16 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
     }
 
     return (
+        <div className="flex flex-col gap-y-4">
+            <DeleteDialog />
         <Card className="w-full h-full border-none shadow-none bg-neutral-100 dark:bg-neutral-900">
-            <CardHeader className="flex p-7">
+            <CardHeader className="flex flex-row items-center gap-x-4 p-7 space-y-0">
+                <Button size="sm" variant="secondary" onClick={onCancel ? onCancel : () => router.push('/dashboard/workspaces/${initialValues.$id}')}>
+                    <ArrowLeftIcon className="size-4 mr-2" />
+                    Back
+                </Button>
                 <CardTitle className="text-xl font-bold">
-                    Create a new Workspace
+                    {initialValues.name}
                 </CardTitle>
             </CardHeader>
             <div className="px-7">
@@ -174,12 +212,33 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
                                 size="lg"
                                 disabled={isPending}
                             >
-                                Create Workspace
+                                Save Changes
                             </Button>
                         </div>
                     </form>
                 </Form>
             </CardContent>
         </Card>
+        <Card className="w-full h-full border-none shadow-none bg-neutral-100 dark:bg-neutral-900">
+            <CardContent className="p-7">
+                <div className="flex flex-col">
+                    <h3>Danger Zone</h3>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                        Are you sure you want to delete this workspace? This action cannot be undone.
+                    </p>
+                    <Button
+                        className="mt-6 w-fit ml-auto"
+                        size="sm"
+                        variant="destructive"
+                        type="button"
+                        disabled={isPending || isDeletingWorkspace}
+                        onClick={handleDelete}
+                    >
+                        Delete Workspace
+                    </Button>
+                </div>
+            </CardContent>
+        </Card>
+        </div>
     )
 }
