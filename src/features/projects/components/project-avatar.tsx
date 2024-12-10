@@ -1,24 +1,26 @@
 "use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
-interface WorkspaceAvatarProps {
+interface ProjectAvatarProps {
     image?: string;
     name: string;
     className?: string;
-};
+    fallbackClassName?: string;
+}
 
-export const WorkspaceAvatar = ({ 
+export const ProjectAvatar = ({
     image,
     name,
-    className
-}: WorkspaceAvatarProps) => {
+    className,
+    fallbackClassName,
+}: ProjectAvatarProps) => {
     if (image) {
         return (
-            <div className={cn("size-10 relative rounded-md overflow-hidden",
+            <div className={cn("size-10 rounded-md",
                 className,
             )}>
                 <Image src={image} alt={name} fill className="object-cover"/>
@@ -28,7 +30,9 @@ export const WorkspaceAvatar = ({
 
     return (
         <Avatar className={cn("size-10 rounded-md", className)}>
-            <AvatarFallback className="text-white bg-blue-600 font-semibold text-lg uppercase">
+            <AvatarFallback className={cn("text-white bg-blue-600 font-semibold text-sm uppercase", 
+            fallbackClassName
+            )}>
                 {name[0]}
             </AvatarFallback>
         </Avatar>
