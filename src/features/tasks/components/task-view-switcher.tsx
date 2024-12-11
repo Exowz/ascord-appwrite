@@ -15,11 +15,15 @@ import { columns } from "./columns";
 import { DataKanban } from "./data-kanban";
 import { useCallback } from "react";
 import { TaskStatus } from "../types";
-import { number } from "zod";
 import { useBulkUpdateTasks } from "../api/use-bulk-update-task";
 import { DataCalendar } from "./data-calendar";
+import { useProjectId } from "@/features/projects/hooks/use-project-id";
 
-export const TaskViewSwitcher = () => {
+interface TaskViewSwitcherProps {
+    hideProjectFilter?: boolean;
+}
+
+export const TaskViewSwitcher = ({ hideProjectFilter }: TaskViewSwitcherProps) => {
     const [{
         status,
         assigneeId,
@@ -31,13 +35,14 @@ export const TaskViewSwitcher = () => {
         defaultValue: "table",
     })
     const workspaceId = useWorkspaceId();
+    const paramProjectId = useProjectId();
 
     const { 
         data: tasks, 
         isLoading: isLoadingTasks
     } = useGetTasks({ 
         workspaceId,
-        projectId,
+        projectId: paramProjectId || projectId,
         assigneeId,
         status,
         dueDate
@@ -92,7 +97,7 @@ export const TaskViewSwitcher = () => {
                     </Button>
                 </div>
                 <Separator className="my-4" />
-                <DataFilters />
+                <DataFilters hideProjectFilter={hideProjectFilter}/>
                 <Separator className="my-4" />
                 {isLoadingTasks ? (
                     <div className="w-full border rounded-lg h-[200px] flex flex-col items-center justify-center">

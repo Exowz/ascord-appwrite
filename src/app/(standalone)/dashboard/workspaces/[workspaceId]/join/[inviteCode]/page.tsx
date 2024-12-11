@@ -10,7 +10,7 @@ interface WorkspaceIdJoinPageProps {
     };
 }
 
-const WorksapceIdJoinPage = async ({
+const WorkspaceIdJoinPage = async ({
     params,
 }: WorkspaceIdJoinPageProps) => {
     const user = await getCurrent();
@@ -32,4 +32,4 @@ const WorksapceIdJoinPage = async ({
      );
 }
  
-export default WorksapceIdJoinPage;
+export default WorkspaceIdJoinPage;

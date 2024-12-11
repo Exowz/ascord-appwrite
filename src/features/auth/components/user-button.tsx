@@ -26,8 +26,8 @@ export const UserButton = () => {
 
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center size-10 rounded-full bg-neutral-200 border border-neutral-300">
-                <Loader className="size-4 animate-spin text-muted-foreground"/>
+            <div className="flex items-center justify-center size-10 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700">
+                <Loader className="size-4 animate-spin text-muted-foreground dark:text-neutral-400" />
             </div>
         );
     }
@@ -45,34 +45,41 @@ export const UserButton = () => {
     return (
         <DropdownMenu modal={false}>
             <DropdownMenuTrigger className="outline-none relative">
-                <Avatar className="size-10 hover:opacity-75 transition border border-neutral-300">
-                    <AvatarFallback className="bg-neutral-200 font-bold text-neutral-500 flex items-center justify-center">
+                <Avatar className="size-10 hover:opacity-75 transition border border-neutral-300 dark:border-neutral-700">
+                    <AvatarFallback className="bg-neutral-200 dark:bg-neutral-800 font-bold text-neutral-500 dark:text-neutral-400 flex items-center justify-center">
                         {avatarFallback}
                     </AvatarFallback>
                 </Avatar>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" side="bottom" className="w-60" sideOffset={10}>
+            <DropdownMenuContent
+                align="end"
+                side="bottom"
+                className="w-60 bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700"
+                sideOffset={10}
+            >
                 <div className="flex flex-col items-center justify-center gap-2 px-2.5 py-4">
-                    <Avatar className="size-[52px] transition border border-neutral-300">
-                        <AvatarFallback className="bg-neutral-200 text-xl font-bold text-neutral-500 flex items-center justify-center">
+                    <Avatar className="size-[52px] transition border border-neutral-300 dark:border-neutral-700">
+                        <AvatarFallback className="bg-neutral-200 dark:bg-neutral-800 text-xl font-bold text-neutral-500 dark:text-neutral-400 flex items-center justify-center">
                             {avatarFallback}
                         </AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col items-center justify-center">
-                        <p className="text-sm font-bold text-neutral-900">
+                        <p className="text-sm font-bold text-neutral-900 dark:text-neutral-100">
                             {name || "User"}
                         </p>
-                        <p className="text-xs text-neutral-500">{email}</p>
+                        <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                            {email}
+                        </p>
                     </div>      
                 </div>
-                <Separator className="mb-1" />
+                <Separator className="mb-1 dark:bg-neutral-700" />
                 <DropdownMenuItem 
                     onClick={() => logout()}
-                    className="h-10 flex items-center justify-center text-amber-700 font-bold cursor-pointer">
+                    className="h-10 flex items-center justify-center text-red-700 dark:text-red-500 font-bold cursor-pointer">
                     <LogOut className="size-4 mr-2" />
                     Log out
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
-    )
-}
+    );
+};

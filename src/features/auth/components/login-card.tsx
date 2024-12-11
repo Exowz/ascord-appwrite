@@ -27,6 +27,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
+import { signUpWithGoogle } from "@/lib/oauth";
 
 import { loginSchema } from "../schema";
 import { useLogin } from "../api/use-login";
@@ -110,18 +111,10 @@ export const LoginCard = () => {
                     variant="outline"
                     size="lg"
                     className="w-full"
+                    onClick={() => signUpWithGoogle()}
                 >
                     <IconBrandGoogle className="mr-2 size-5 text-neutral-800 dark:text-neutral-300"/>
                     Login with Google
-                </Button>
-                <Button
-                    disabled={isPending}
-                    variant="outline"
-                    size="lg"
-                    className="w-full"
-                >
-                    <IconBrandGithub className="mr-2 size-5 text-neutral-800 dark:text-neutral-300"/>
-                    Login with Github
                 </Button>
             </CardContent>
         </Card>
