@@ -64,21 +64,9 @@ export const Dock = () => {
         // Project-specific routes
         ...(projects?.documents.flatMap((project) => [
             {
-                title: "Table", // Custom title for project overview
-                icon: <BsTable className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-                href: `/dashboard/workspaces/${workspaceId}/projects/${project.$id}/table`,
-                show: pathname?.startsWith(`/dashboard/workspaces/${workspaceId}/projects/${project.$id}`),
-            },
-            {
-                title: "Kanban", // Another custom route for project
-                icon: <BsFillKanbanFill className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-                href: `/dashboard/workspaces/${workspaceId}/projects/${project.$id}/kanban`,
-                show: pathname?.startsWith(`/dashboard/workspaces/${workspaceId}/projects/${project.$id}`),
-            },
-            {
-                title: "Calendar", // Another custom route for project
-                icon: <BsCalendar2Fill className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-                href: `/dashboard/workspaces/${workspaceId}/projects/${project.$id}/calendar`,
+                title: "Tasks",
+                icon: <GoCheckCircle className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+                href: `/dashboard/workspaces/${workspaceId}/projects/${project.$id}`,
                 show: pathname?.startsWith(`/dashboard/workspaces/${workspaceId}/projects/${project.$id}`),
             },
             {

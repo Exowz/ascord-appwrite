@@ -65,7 +65,8 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		boxShadow: {
-			input: '`0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`'
+			input: '0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)',
+        'input-dark': '0px 4px 6px -1px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(0, 0, 0, 0.5)',
 		},
 		keyframes: {
 			shimmer: {

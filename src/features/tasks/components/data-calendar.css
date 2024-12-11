@@ -1,0 +1,58 @@
+/* Base Styles for Calendar Rows and Cells */
+.rbc-month-row {
+    @apply min-h-[95px]; /* Keep the minimum height as requested */
+    border-top: 1px solid #e0e0e0; /* Light Mode Row Lines */
+}
+
+.dark .rbc-month-row {
+    border-top: 1px solid #3a3a3a; /* Dark Mode Row Lines */
+}
+
+/* Header Styles */
+.rbc-header {
+    @apply dark:text-neutral-500; /* Dark mode text color */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light Mode Header Line */
+}
+
+.dark .rbc-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Dark Mode Header Line */
+}
+
+/* Calendar Grid Lines */
+.rbc-row {
+    border-top: 1px solid #e0e0e0; /* Light Mode Grid Lines */
+}
+
+.dark .rbc-row {
+    border-top: 1px solid #3a3a3a; /* Dark Mode Grid Lines */
+}
+
+/* Focus on Today */
+.rbc-today {
+    background-color: rgba(255, 245, 157, 0.4); /* Subtle highlight for today in Light Mode */
+}
+
+.dark .rbc-today {
+    background-color: rgba(255, 255, 0, 0.1); /* Subtle highlight for today in Dark Mode */
+}
+
+/* Hover Effects (Optional - If you want to avoid, remove) */
+.rbc-cell:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Light Mode Cell Hover */
+}
+
+.dark .rbc-cell:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Dark Mode Cell Hover */
+}
+
+/* Remove Box Shadows and Padding */
+.rbc-calendar {
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Remove Unwanted Hover Effects */
+.rbc-row:hover,
+.rbc-month-row:hover {
+    background-color: transparent !important;
+}

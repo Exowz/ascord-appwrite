@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 
 import { getCurrent } from "@/features/auth/queries";
 import { getProject } from "@/features/projects/queries"
+import { TaskViewSwitcher } from "@/features/tasks/components/task-view-switcher";
 
 interface ProjectIdPagePros {
     params: { projectId: string };
@@ -21,8 +22,8 @@ const ProjectIdPage = async ({ params, }: ProjectIdPagePros) => {
     };
 
     return (
-        <div className="flex flex-col gap-y-4">
-            
+        <div className="flex flex-col gap-y-4 shadow-md dark:shadow-input-dark rounded-xl">
+            <TaskViewSwitcher />
         </div>
     );
 };
