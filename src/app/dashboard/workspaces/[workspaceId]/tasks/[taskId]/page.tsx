@@ -7,7 +7,7 @@ const TaskIdPage = async () => {
     if (!user) redirect ("/login");
 
     return ( 
-        <div className="dark:bg-neutral-900 bg-neutral-100 py-8 mx-1 rounded-xl mb-8 bottom-20 fixed h-full">
+        <div>
             <div className="mt-4">
                 <TaskIdClient />
             </div>

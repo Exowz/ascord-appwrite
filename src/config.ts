@@ -4,3 +4,7 @@ export const IMAGE_BUCKET_ID = process.env.NEXT_PUBLIC_APPWRITE_IMAGES_BUCKET_ID
 export const MEMBERS_ID = process.env.NEXT_PUBLIC_APPWRITE_MEMBERS_ID!;
 export const PROJECTS_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECTS_ID!;
 export const TASKS_ID = process.env.NEXT_PUBLIC_APPWRITE_TASKS_ID!;
+export const CONVERSATIONS_ID = process.env.NEXT_PUBLIC_APPWRITE_CONVERSATIONS_ID!;
+export const MESSAGES_ID = process.env.NEXT_PUBLIC_APPWRITE_MESSAGES_ID!;
+export const DM_ID = process.env.NEXT_PUBLIC_APPWRITE_DM_ID!;
+export const CHANNELS_ID = process.env.NEXT_PUBLIC_APPWRITE_CHANNELS_ID!;
