@@ -101,14 +101,14 @@ export const Dock = () => {
     return (
         <div className="fixed bottom-4 left-0 w-full">
             <div className="relative gap-4">
-                <div className="fixed bottom-4 h-16 w-16 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-900 shadow-md md:mx-8">
+                <div className="fixed bottom-4 size-20 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-900 shadow-md md:mx-8">
                     <UserButton />
                 </div>
             </div>
             <div className="flex items-center justify-center w-full">
                 <FloatingDock items={visibleRoutes} />
             </div>
-            <div className="fixed bottom-4 right-4 h-16 w-36 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-900 md:mx-8 shadow-md">
+            <div className="fixed bottom-4 right-4 h-20 w-36 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-900 md:mx-4 shadow-md">
                 <ModeToggle />
             </div>
         </div>

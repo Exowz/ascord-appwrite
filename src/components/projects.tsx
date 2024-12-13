@@ -11,7 +11,7 @@ import { useCreateProjectModal } from "@/features/projects/hooks/use-create-proj
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 import { GoHome } from "react-icons/go";
 
-export const Projects = () => {
+export const  Projects = () => {
     const pathname = usePathname();
     const { open } = useCreateProjectModal();
     const workspaceId = useWorkspaceId();

@@ -24,7 +24,7 @@ export const ProjectIdClient = () => {
     }
 
     return(
-        <div className="flex flex-col gap-y-4 shadow-md dark:shadow-input-dark rounded-xl">
+        <div className="flex flex-col gap-y-4 shadow-md dark:shadow-input-dark rounded-xl bg-neutral-100 dark:bg-neutral-900 p-4">
             {analytics ? (
                 <Analytics data={analytics} />
             ) : null}

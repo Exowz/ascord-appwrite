@@ -49,8 +49,10 @@ const Header = () => {
 
           {/* Right Section: Login Button */}
           <div className="flex flex-1 justify-end items-center gap-2">
-                <Button>
+                <Button asChild>
+                  <Link href={`/register`}>
                     Get started
+                  </Link>
                 </Button>
           </div>
         </div>

@@ -1,6 +1,6 @@
 /* Base Styles for Calendar Rows and Cells */
 .rbc-month-row {
-    @apply min-h-[68px]; /* Keep the minimum height as requested */
+    @apply min-h-[54px]; /* Keep the minimum height as requested */
     border-top: 1px solid #e0e0e0; /* Light Mode Row Lines */
 }
 

@@ -14,10 +14,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
-    IconBrandGithub,
     IconBrandGoogle,
 } from "@tabler/icons-react";
-import Logo from "@/components/logo";
 import { Separator } from "@/components/ui/separator";
 import {
     Form,
@@ -52,11 +50,10 @@ export const RegisterCard = () => {
         <Card className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
             <CardHeader className="flex items-center justify-center text-center p-7">
                 <CardTitle className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-                    <Logo />
-                    Ascord
+                    Register Form
                 </CardTitle>
                 <CardDescription>
-                    Sign up
+                    Please fill out the form below to create an account.
                 </CardDescription>
             </CardHeader>
             <div className="px-7 mb-2">

@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
-    IconBrandGithub,
     IconBrandGoogle,
 } from "@tabler/icons-react";
 import Logo from "@/components/logo";
@@ -51,11 +50,10 @@ export const LoginCard = () => {
         <Card className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black" suppressHydrationWarning>
             <CardHeader className="flex items-center justify-center text-center p-7">
                 <CardTitle className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-                    <Logo />
-                    Ascord
+                    Login
                 </CardTitle>
                 <CardDescription className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-                    Welcome back!
+                    Welcome back! Please enter your credentials to continue.
                 </CardDescription>
             </CardHeader>
             <div className="px-7 mb-2">

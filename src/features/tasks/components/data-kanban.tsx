@@ -145,7 +145,7 @@ export const DataKanban = ({ data, onChange }: DataKanbanProps) => {
             <div className="flex overflow-x-auto ">
                 {boards.map((board) =>{
                     return (
-                        <div key={board} className="flex-1 mx-2 bg-neutral-50 dark:bg-neutral-700 p-1.5 shadow-sm rounded-xl min-w-[200px]">
+                        <div key={board} className="flex-1 mx-2 bg-neutral-50 dark:bg-neutral-700 p-1.5 shadow-md rounded-xl min-w-[200px]">
                             <KanbanColumHeader
                                 board={board} 
                                 taskCount={tasks[board].length}

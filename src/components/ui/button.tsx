@@ -17,7 +17,7 @@ const buttonVariants = cva(
         secondary:
           "inline-flex h-12 animate-shimmer items-center justify-center rounded-md border-[#364f6b] bg-[linear-gradient(110deg,#a6c1ee,45%,#85a3d8,55%,#a6c1ee)] bg-[length:200%_100%] px-6 font-bold text-[#364f6b] transition-colors focus:outline-none focus:ring-2 focus:ring-[#85a3d8] focus:ring-offset-2 focus:ring-offset-[#e8f1fb]",
         ghost: "px-8 py-2 rounded-md bg-blue-700 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-blue-700",
-        muted: "font-bold px-4 py-2 rounded-md border border-neutral-300 bg-neutral-100 text-neutral-500 text-sm",
+        muted: "font-bold px-4 py-2 rounded-md border border-neutral-300 bg-neutral-100 text-neutral-500 text-sm dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import { cn } from "@/lib/utils";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";

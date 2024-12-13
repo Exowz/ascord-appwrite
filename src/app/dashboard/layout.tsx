@@ -5,6 +5,7 @@ import { CreateWorkspaceModal } from "@/features/workspaces/components/create-wo
 import { CreateProjectModal } from "@/features/projects/components/create-project-modal";
 import { CreateTaskModal } from "@/features/tasks/components/create-task-modal";
 import { EditTaskModal } from "@/features/tasks/components/edit-task-modal";
+import { WorkspaceSwitcher } from "@/components/workspace-switcher";
 
 
 interface DashboardLayoutProps {
@@ -20,19 +21,20 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             <EditTaskModal />
             {/* Navbar */}
             <div className="flex top-0 left-0 w-full">
-                <Navbar />
+                <WorkspaceSwitcher />
             </div>
 
             {/* Main layout container */}
-            <div className="flex w-full pt-[64px]">
+            <div className="flex w-full pt-[64px] h-[calc(100vh-64px)]">
                 {/* Sidebar */}
-                <div className="hidden h-full lg:block">
+                <div className="hidden h-full lg:block lg:w-[7rem">
                     <Sidebar />
                 </div>
 
                 {/* Main Content */}
-                <div className="flex-1 lg:ml-[calc(7rem+1rem)] py-8 mx-8">
-                    <main>{children}</main>
+                <div className="fixed top-[96px] bottom-[7rem] left-[calc(7rem+1rem)] right-[2rem] bg-neutral-100 dark:bg-neutral-900 
+                    rounded-xl  p-4 overflow-auto">
+                    <main className="h-full">{children}</main>
                 </div>
             </div>
 

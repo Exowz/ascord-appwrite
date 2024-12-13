@@ -105,13 +105,13 @@ export const TaskViewSwitcher = ({ hideProjectFilter }: TaskViewSwitcherProps) =
                     </div>
                 ) : (
                 <>
-                    <TabsContent value="table" className="mt-0">
+                    <TabsContent value="table" className="mt-0 shadow-md rounded-xl">
                         <DataTable columns={columns} data={tasks?.documents ?? []}/>
                     </TabsContent>
                     <TabsContent value="kanban" className="mt-0">
                         <DataKanban onChange={onKanbanChange} data={tasks?.documents ?? []}/>
                     </TabsContent>
-                    <TabsContent value="calendar" className="mt-0">
+                    <TabsContent value="calendar" className="mt-0 shadow-md rounded-xl">
                         <DataCalendar data={tasks?.documents ?? []}/>
                     </TabsContent>
                 </>

@@ -26,12 +26,13 @@ export const WorkspaceSwitcher = () => {
     };
 
     return (
-        <div className="flex justify-between items-center w-full max-w-xl">
+        <nav className="fixed top-4 w-full left-0">
+        <div className="flex justify-center items-center p-3 rounded-xl mx-8 shadow-md bg-neutral-100 dark:bg-neutral-900">
             <Select onValueChange={onSelect} value={workspaceId}>
-                <SelectTrigger className="flex items-center justify-between gap-3 bg-neutral-200 dark:bg-neutral-900 font-medium text-sm p-3 rounded-md w-full">
+                <SelectTrigger className="flex items-center justify-between gap-3 bg-neutral-100 dark:bg-neutral-900 font-medium text-sm pl-12 rounded-md">
                     <SelectValue placeholder="Select a workspace" />
                 </SelectTrigger>
-                <SelectContent className="bg-neutral-200 dark:bg-neutral-900">
+                <SelectContent className="bg-neutral-100 dark:bg-neutral-900 left-4 right-4">
                     {workspaces?.documents.map((workspace) => (
                         <SelectItem key={workspace.$id} value={workspace.$id}>
                             <div className="flex justify-start items-center gap-3 font-medium">
@@ -47,5 +48,6 @@ export const WorkspaceSwitcher = () => {
                 onClick={open} // Call the modal open function
             />
         </div>
+        </nav>
     );
 };
