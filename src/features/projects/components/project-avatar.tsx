@@ -30,7 +30,7 @@ export const ProjectAvatar = ({
 
     return (
         <Avatar className={cn("size-10 rounded-md", className)}>
-            <AvatarFallback className={cn("text-white bg-blue-600 font-semibold text-sm uppercase", 
+            <AvatarFallback className={cn("text-white bg-blue-800 font-semibold text-sm uppercase", 
             fallbackClassName
             )}>
                 {name[0]}

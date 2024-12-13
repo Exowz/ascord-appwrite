@@ -32,9 +32,9 @@ export const Dock = () => {
             show: isWorkspacePage && !isProjectPage,
         },
         {
-            title: "Settings",
-            icon: <SettingsIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-            href: `/dashboard/workspaces/${workspaceId}/settings`,
+            title: "Members",
+            icon: <UsersIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+            href: `/dashboard/workspaces/${workspaceId}/members`,
             show: isWorkspacePage && !isProjectPage,
         },
         {
@@ -56,9 +56,9 @@ export const Dock = () => {
             show: isWorkspacePage && !isProjectPage,
         },
         {
-            title: "Members",
-            icon: <UsersIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-            href: `/dashboard/workspaces/${workspaceId}/members`,
+            title: "Settings",
+            icon: <SettingsIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+            href: `/dashboard/workspaces/${workspaceId}/settings`,
             show: isWorkspacePage && !isProjectPage,
         },
         // Project-specific routes
